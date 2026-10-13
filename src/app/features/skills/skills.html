@@ -1,0 +1,48 @@
+
+<section class="skills" id="tecnologias">
+
+  <div class="skills-container">
+
+    <span class="section-label">
+      MIS COMPETENCIAS
+    </span>
+
+    <h2>Tecnologías y especialidades</h2>
+
+    <p class="section-description">
+      Tecnologías y herramientas con las que desarrollo
+      soluciones de software, aplicaciones y sistemas
+      conectados.
+    </p>
+
+    <div class="skills-grid">
+
+      @for (category of skillCategories; track category.title) {
+
+        <article class="skill-card">
+
+          <h3>{{ category.title }}</h3>
+
+          <p>{{ category.description }}</p>
+
+          <div class="technologies">
+
+            @for (technology of category.technologies; track technology) {
+
+              <span class="technology">
+                {{ technology }}
+              </span>
+
+            }
+
+          </div>
+
+        </article>
+
+      }
+
+    </div>
+
+  </div>
+
+</section>

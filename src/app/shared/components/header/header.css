@@ -1,0 +1,77 @@
+
+/* Cabecera principal */
+.header {
+  width: 100%;
+  background-color: #0b1220;
+  border-bottom: 1px solid #1e293b;
+}
+
+/* Contenedor interior */
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Logotipo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #f8fafc;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.logo-icon {
+  color: #38bdf8;
+  font-size: 24px;
+}
+
+/* Navegación */
+.nav {
+  display: flex;
+  gap: 30px;
+}
+
+.nav a {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.nav a:hover {
+  color: #38bdf8;
+}
+
+/* Selector de idioma */
+.language-selector {
+  display: flex;
+  gap: 8px;
+  color: #94a3b8;
+  font-size: 14px;
+}
+
+.language-selector .active {
+  color: #38bdf8;
+  font-weight: bold;
+}
+
+/* Adaptación a móviles */
+@media (max-width: 650px) {
+  .header-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav {
+    gap: 15px;
+  }
+}
