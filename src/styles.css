@@ -1,22 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
-
-/* Colores generales del portfolio */
+@import "tailwindcss";
 :root {
-  --color-fondo: #0b1220;
-  --color-texto: #f8fafc;
-  --color-acento: #38bdf8;
-  --color-secundario: #94a3b8;
+  /* Colores principales */
+  --color-fondo: #ffffff;
+  --color-texto: #171717;
+  --color-secundario: #6b7280;
+
+  /* Paleta de las ilustraciones */
+  --color-azul: #35c5dd;
+  --color-naranja: #ff8a24;
+  --color-amarillo: #ffd92f;
+  --color-verde: #65b84a;
+
+  /* Tonos suaves para fondos */
+  --color-azul-suave: #e8f9fc;
+  --color-naranja-suave: #fff3e8;
+  --color-amarillo-suave: #fff9d9;
+  --color-verde-suave: #eaf7e7;
+
+  /* Compatibilidad con estilos anteriores */
+  --color-acento: #35c5dd;
 }
 
-/* Estilos globales */
-* {
-  box-sizing: border-box;
+html {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-  margin: 0;
-  min-height: 100vh;
-  background-color: var(--color-fondo);
-  color: var(--color-texto);
-  font-family: Arial, sans-serif;
+  font-family: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
 }

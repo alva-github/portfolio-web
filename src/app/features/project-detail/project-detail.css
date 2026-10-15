@@ -523,4 +523,270 @@
   }
 }
 
+/* ==========================================
+   REDISEÑO VISUAL - ESP32 POWER MONITOR
+   ========================================== */
 
+.project-detail {
+  color: var(--color-texto);
+  padding-top: 35px;
+}
+
+.back-link,
+.section-label {
+  color: #078aa3;
+}
+
+.project-header h1 {
+  color: var(--color-texto);
+}
+
+.project-intro {
+  color: var(--color-secundario);
+}
+
+/* Secciones técnicas */
+
+.project-section {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+}
+
+.project-section h2 {
+  color: var(--color-texto);
+}
+
+.project-section p,
+.project-section li {
+  color: #4b5563;
+}
+
+.project-section li::marker {
+  color: var(--color-naranja);
+}
+
+/* Diagrama de arquitectura */
+
+.architecture-block {
+  background: var(--color-amarillo-suave);
+  border-color: #f0e3aa;
+}
+
+.architecture-block strong {
+  color: var(--color-texto);
+}
+
+.architecture-block span {
+  color: #4b5563;
+}
+
+.main-controller {
+  background: var(--color-azul-suave);
+  border-color: var(--color-azul);
+  box-shadow: none;
+}
+
+.main-controller strong {
+  color: #078aa3;
+}
+
+.architecture-arrow {
+  color: var(--color-naranja);
+}
+
+.architecture-power {
+  background: var(--color-verde-suave);
+  border-color: var(--color-verde);
+  color: #377d28;
+}
+
+/* ==========================================
+   TABLA DE CONEXIONES - NUEVA PALETA
+   ========================================== */
+
+.table-wrapper {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+}
+
+.hardware-table {
+  background: #ffffff;
+}
+
+.hardware-table thead {
+  background: var(--color-azul-suave);
+}
+
+.hardware-table th {
+  color: #171717;
+  font-weight: 700;
+}
+
+.hardware-table td {
+  color: #4b5563;
+  border-top: 1px solid #e5e7eb;
+}
+
+.hardware-table td:first-child {
+  color: #171717;
+  font-weight: 600;
+}
+
+.hardware-table tbody tr:nth-child(even) {
+  background: #f9fafb;
+}
+
+.hardware-table tbody tr:hover {
+  background: var(--color-amarillo-suave);
+}
+
+
+
+/* ==========================================
+   FLUJO DEL SOFTWARE - NUEVA PALETA
+   ========================================== */
+
+.software-flow::before {
+  background: var(--color-azul);
+}
+
+.step-number {
+  background: var(--color-amarillo-suave);
+  border: 2px solid var(--color-naranja);
+  color: #171717;
+}
+
+.flow-step > div {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+}
+
+.flow-step:hover > div {
+  border-color: var(--color-azul);
+}
+
+.flow-step h3 {
+  color: #171717;
+}
+
+.flow-step p {
+  color: #4b5563;
+}
+
+/* ==========================================
+   TELEGRAM - NUEVA PALETA
+   ========================================== */
+
+/* Contenedor de la notificación */
+.telegram-example {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+}
+
+/* Icono */
+.telegram-icon {
+  background: var(--color-azul);
+  color: #ffffff;
+}
+
+/* Cabecera */
+.telegram-header strong {
+  color: var(--color-texto);
+}
+
+.telegram-header span:not(.telegram-icon) {
+  color: var(--color-secundario);
+}
+
+/* Burbuja del mensaje */
+.telegram-message {
+  background: var(--color-azul-suave);
+  color: var(--color-texto);
+}
+
+/* Título del mensaje */
+.telegram-message > strong {
+  color: var(--color-texto);
+}
+
+/* Texto */
+.telegram-message p {
+  color: #374151;
+}
+
+/* Fechas, duración y eventos */
+.telegram-data {
+  background: #ffffff;
+  border: 1px solid #d8edf2;
+  color: #374151;
+}
+
+/* Confirmación de recuperación */
+.telegram-message .telegram-success {
+  color: #377d28;
+}
+
+/* Galería de fotografías */
+
+.project-photo {
+  margin: 25px 0 0;
+}
+
+.project-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+}
+
+.project-photo figcaption {
+  margin-top: 12px;
+  color: var(--color-secundario);
+  font-size: 13px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   GALERÍA DEL PROYECTO
+   ========================================== */
+
+.project-photo {
+  margin: 25px 0 0;
+  padding: 10px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+}
+
+.project-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 9px;
+  transition: transform 0.3s ease;
+}
+
+.project-photo img:hover {
+  transform: scale(1.015);
+}
+
+.project-photo figcaption {
+  margin: 14px 5px 5px;
+  color: var(--color-secundario);
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-photo img {
+    transition: none;
+  }
+
+  .project-photo img:hover {
+    transform: none;
+  }
+}

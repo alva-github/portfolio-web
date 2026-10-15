@@ -1,0 +1,307 @@
+
+/* Página Experiencia profesional */
+
+.experience-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 35px 24px 90px;
+  color: #171717;
+}
+
+/* Encabezado */
+
+.experience-header {
+  margin-bottom: 35px;
+}
+
+.experience-page .section-label {
+  margin: 0;
+  color: #078aa3;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.experience-header h1 {
+  margin: 12px 0;
+  color: #171717;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.experience-intro {
+  max-width: 650px;
+  margin: 0;
+  color: #6b7280;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* Trayectoria profesional */
+
+.experience-timeline {
+  display: grid;
+  gap: 25px;
+}
+
+/* Tarjeta de empresa */
+
+.experience-card {
+  padding: 30px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* Cabecera de la tarjeta */
+
+.experience-card-header {
+  margin-bottom: 22px;
+  padding-bottom: 20px;
+  border-bottom: 3px solid var(--color-amarillo);
+}
+
+.experience-card h2 {
+  margin: 0 0 8px;
+  color: #171717;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.experience-role {
+  margin: 0;
+  color: #078aa3;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Descripción */
+
+.experience-description {
+  margin: 0 0 28px;
+  color: #6b7280;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* Responsabilidades */
+
+.experience-card h3 {
+  margin: 25px 0 15px;
+  color: #171717;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.experience-responsibilities {
+  margin: 0 0 30px;
+  padding-left: 22px;
+}
+
+.experience-responsibilities li {
+  margin-bottom: 12px;
+  padding-left: 5px;
+  color: #4b5563;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.experience-responsibilities li::marker {
+  color: #078aa3;
+}
+
+/* Tecnologías */
+
+.experience-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.experience-technologies span {
+  padding: 7px 11px;
+  border-radius: 5px;
+  background: #f3f4f6;
+  color: #374151;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* Colores de las etiquetas */
+
+.experience-technologies span:nth-child(4n + 1) {
+  background: var(--color-azul-suave);
+}
+
+.experience-technologies span:nth-child(4n + 2) {
+  background: var(--color-naranja-suave);
+}
+
+.experience-technologies span:nth-child(4n + 3) {
+  background: var(--color-amarillo-suave);
+}
+
+.experience-technologies span:nth-child(4n + 4) {
+  background: var(--color-verde-suave);
+}
+
+/* Adaptación a móviles */
+
+@media (max-width: 700px) {
+  .experience-page {
+    padding: 25px 20px 65px;
+  }
+
+  .experience-card {
+    padding: 20px;
+  }
+
+  .experience-card h2 {
+    font-size: 22px;
+  }
+
+  .experience-header h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Casos reales de experiencia profesional */
+
+.experience-case {
+  margin: 25px 0;
+  padding: 22px;
+  background: #f5f8fa;
+  border-left: 4px solid #078aa3;
+  border-radius: 8px;
+}
+
+.experience-case h3 {
+  margin: 0 0 14px;
+  color: #171717;
+  font-size: 17px;
+}
+
+.experience-case p {
+  margin: 0 0 12px;
+  color: #4b5563;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.experience-case p:last-child {
+  margin-bottom: 0;
+}
+
+/* Listas dentro de los casos profesionales */
+
+.experience-case ul {
+  margin: 15px 0 20px;
+  padding-left: 22px;
+}
+
+.experience-case li {
+  margin-bottom: 10px;
+  padding-left: 4px;
+  color: #4b5563;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.experience-case li::marker {
+  color: #078aa3;
+}
+
+/* Tarjetas desplegables */
+
+details.experience-case {
+  padding: 0;
+  overflow: hidden;
+}
+
+.experience-case-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 20px 22px;
+  cursor: pointer;
+  list-style: none;
+  color: #171717;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.experience-case-title::-webkit-details-marker {
+  display: none;
+}
+
+.experience-case-title::marker {
+  content: "";
+}
+
+/* Flecha desplegable */
+
+.case-arrow {
+  width: 9px;
+  height: 9px;
+  flex-shrink: 0;
+  border-right: 2px solid #078aa3;
+  border-bottom: 2px solid #078aa3;
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+.experience-case[open] .case-arrow {
+  transform: rotate(225deg);
+}
+
+/* Contenido desplegado */
+
+.experience-case-content {
+  padding: 0 22px 22px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.experience-case-content p:first-child {
+  margin-top: 18px;
+}
+
+.experience-case-title:focus-visible {
+  outline: 2px solid #078aa3;
+  outline-offset: -3px;
+}
+
+/* Información profesional de la empresa */
+
+.experience-company-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.experience-period {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0 0;
+  padding: 7px 12px;
+  background: var(--color-azul-suave, #e8f6fa);
+  border-radius: 6px;
+  color: #374151;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.period-icon {
+  color: #078aa3;
+  font-size: 15px;
+}

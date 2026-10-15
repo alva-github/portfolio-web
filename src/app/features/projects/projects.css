@@ -1,21 +1,201 @@
 
-/* Enlace a los detalles del proyecto */
+/* Contenedor principal */
+
+.projects {
+  padding: 35px 24px 90px;
+  background: #ffffff;
+  color: #171717;
+}
+
+.projects-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Encabezado de la sección */
+
+.section-label {
+  color: #00a6c8;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.projects h2 {
+  margin: 12px 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.section-description {
+  max-width: 650px;
+  margin: 0 0 35px;
+  color: #6b7280;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* Cuadrícula de proyectos */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+}
+
+/* Tarjeta */
+
+.project-card {
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  background: #ffffff;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* Cabecera visual */
+
+.project-image {
+  min-height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f5f8fa;
+  color: #171717;
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Contenido */
+
+.project-content {
+  padding: 25px;
+}
+
+.project-status {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #6b7280;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.project-content h3 {
+  margin: 0 0 12px;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.project-content p {
+  margin: 0 0 20px;
+  color: #6b7280;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* Tecnologías */
+
+.project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 25px;
+}
+
+.technology {
+  padding: 6px 10px;
+  background: #f3f4f6;
+  border-radius: 5px;
+  color: #374151;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* Enlace */
+
 .project-link {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-
-  margin-top: 25px;
-
-  color: #38bdf8;
-  font-size: 14px;
-  font-weight: 600;
+  color: #00a6c8;
+  font-size: 13px;
+  font-weight: 700;
   text-decoration: none;
-
-  transition: gap 0.2s ease;
 }
 
-.project-link:hover {
-  gap: 16px;
-  text-decoration: underline;
+.project-link span {
+  transition: transform 0.2s ease;
+}
+
+.project-link:hover span {
+  transform: translateX(5px);
+}
+
+/* Adaptación a móviles */
+
+@media (max-width: 700px) {
+  .projects {
+    padding: 25px 20px 65px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-content {
+    padding: 20px;
+  }
+}
+
+/* Colores de las ilustraciones */
+
+.section-label {
+  color: #078aa3;
+}
+
+.project-image {
+  background: var(--color-amarillo-suave);
+  border-bottom: 3px solid var(--color-amarillo);
+}
+
+.project-image span {
+  color: #171717;
+}
+
+.project-status {
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: var(--color-verde-suave);
+  color: #377d28;
+}
+
+.technology:nth-child(4n + 1) {
+  background: var(--color-azul-suave);
+}
+
+.technology:nth-child(4n + 2) {
+  background: var(--color-naranja-suave);
+}
+
+.technology:nth-child(4n + 3) {
+  background: var(--color-amarillo-suave);
+}
+
+.technology:nth-child(4n + 4) {
+  background: var(--color-verde-suave);
+}
+
+.project-link {
+  color: #078aa3;
 }
