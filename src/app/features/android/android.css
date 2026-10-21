@@ -1,0 +1,119 @@
+
+.android-page {
+  background: #ffffff;
+  color: #171717;
+  padding: 35px 24px 90px;
+}
+
+.android-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-label {
+  display: inline-block;
+  color: #078aa3;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.android-page h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  margin: 12px 0 20px;
+}
+
+.android-intro {
+  max-width: 750px;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #6b7280;
+  margin-bottom: 45px;
+}
+
+.android-specialties {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.android-card {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 28px;
+  transition: transform 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+.android-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.card-icon {
+  display: block;
+  font-size: 28px;
+  margin-bottom: 16px;
+}
+
+.android-card h2 {
+  font-size: 19px;
+  color: #171717;
+  margin: 0 0 12px;
+}
+
+.android-card p {
+  color: #6b7280;
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* Tecnologías */
+
+.android-technologies {
+  margin-top: 65px;
+}
+
+.android-technologies h2 {
+  font-size: 24px;
+  margin-bottom: 24px;
+}
+
+.technology-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.technology-list span {
+  background: #e8f6f8;
+  color: #087d93;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Diseño adaptable */
+
+@media (max-width: 650px) {
+  .android-page {
+    padding: 25px 20px 65px;
+  }
+
+  .android-specialties {
+    grid-template-columns: 1fr;
+  }
+
+  .android-card {
+    padding: 22px;
+  }
+
+  .android-intro {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,140 @@
+
+/* Página Desarrollo Web */
+
+.web-page {
+  background: #ffffff;
+  color: #171717;
+  padding: 35px 24px 90px;
+}
+
+.web-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Encabezado */
+
+.section-label {
+  display: inline-block;
+  color: #078aa3;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.web-header h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  margin: 12px 0 20px;
+}
+
+.web-intro {
+  max-width: 750px;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #6b7280;
+  margin-bottom: 45px;
+}
+
+/* Tarjetas */
+
+.web-specialties {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.web-card {
+  display: flex;
+  flex-direction: column;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 28px;
+  transition: transform 0.2s ease,
+              box-shadow 0.2s ease;
+}
+
+.web-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.card-number {
+  color: #078aa3;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  margin-bottom: 18px;
+}
+
+.web-card h2 {
+  font-size: 19px;
+  margin: 0 0 12px;
+}
+
+.web-card p {
+  color: #6b7280;
+  font-size: 14px;
+  line-height: 1.8;
+  margin: 0 0 24px;
+}
+
+/* Etiquetas de tecnologías */
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.card-tags span {
+  background: #e8f6f8;
+  color: #087d93;
+  padding: 7px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Bloque final */
+
+.web-footer {
+  margin-top: 65px;
+  padding-top: 35px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.web-footer h2 {
+  font-size: 24px;
+  margin: 12px 0 18px;
+}
+
+.web-footer p {
+  max-width: 780px;
+  color: #6b7280;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* Móviles */
+
+@media (max-width: 650px) {
+  .web-page {
+    padding: 25px 20px 65px;
+  }
+
+  .web-specialties {
+    grid-template-columns: 1fr;
+  }
+
+  .web-card {
+    padding: 22px;
+  }
+
+  .web-intro {
+    font-size: 16px;
+  }
+}

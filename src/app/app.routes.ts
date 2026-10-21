@@ -6,6 +6,9 @@ import { Projects } from './features/projects/projects';
 import { ProjectDetail } from './features/project-detail/project-detail';
 import { Experience } from './features/experience/experience';
 import { About } from './features/about/about';
+import { Android } from './features/android/android';
+import { Web } from './features/web/web';
+import { Contact } from './features/contact/contact';
 
 export const routes: Routes = [
   {
@@ -27,6 +30,18 @@ export const routes: Routes = [
   {
     path: 'sobre-mi',
     component: About
+  },
+  {
+    path: 'android',
+    component: Android
+  },
+  {
+    path: 'web',
+    component: Web
+  },
+  {
+    path: 'contacto',
+    component: Contact
   },
   {
     path: '**',

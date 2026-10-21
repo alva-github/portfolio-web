@@ -2,7 +2,10 @@
 <header class="portfolio-header">
 
   <div class="portfolio-brand">
-    <a routerLink="/" class="portfolio-name">
+    <a
+      routerLink="/"
+      class="portfolio-name"
+      (click)="closeMenu()">
       JESÚS ÁLVAREZ
     </a>
 
@@ -11,12 +14,40 @@
     </p>
   </div>
 
-  <nav class="portfolio-nav" aria-label="Navegación principal">
-    <a routerLink="/">INICIO</a>
-    <a routerLink="/" fragment="sobre-mi">SOBRE MÍ</a>
-    <a routerLink="/" fragment="proyectos">PROYECTOS</a>
-    <a routerLink="/" fragment="experiencia">EXPERIENCIA</a>
-    <a routerLink="/" fragment="contacto">CONTACTO</a>
+  <!-- Botón hamburguesa para móvil y tablet -->
+  <button
+    type="button"
+    class="menu-toggle"
+    (click)="toggleMenu()"
+    [attr.aria-expanded]="menuOpen()"
+    aria-controls="portfolio-navigation"
+    [attr.aria-label]="menuOpen() ? 'Cerrar menú' : 'Abrir menú'">
+
+    @if (menuOpen()) {
+      <span aria-hidden="true">✕</span>
+    } @else {
+      <span aria-hidden="true">☰</span>
+    }
+
+  </button>
+
+  <!-- Navegación principal -->
+  <nav
+    id="portfolio-navigation"
+    class="portfolio-nav"
+    [class.menu-open]="menuOpen()"
+    aria-label="Navegación principal">
+
+    <a routerLink="/" (click)="closeMenu()">INICIO</a>
+
+    <a routerLink="/sobre-mi" (click)="closeMenu()">SOBRE MÍ</a>
+
+    <a routerLink="/proyectos" (click)="closeMenu()">PROYECTOS</a>
+
+    <a routerLink="/experiencia" (click)="closeMenu()">EXPERIENCIA</a>
+
+    <a routerLink="/contacto" (click)="closeMenu()">CONTACTO</a>
+
   </nav>
 
 </header>

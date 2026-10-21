@@ -33,3 +33,178 @@
   flex-wrap: wrap;
   gap: 26px;
 }
+
+/* =========================================
+   BOTÓN HAMBURGUESA
+   ========================================= */
+
+/* Oculto por defecto en escritorio */
+.menu-toggle {
+  display: none;
+}
+
+/* =========================================
+   RESPONSIVE - MÓVIL Y TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+
+  .portfolio-header {
+    padding: 24px 20px;
+    position: relative;
+  }
+
+  .portfolio-brand {
+    margin-bottom: 16px;
+  }
+
+  .portfolio-name {
+    font-size: clamp(1.8rem, 6vw, 3rem);
+    letter-spacing: -0.05em;
+  }
+
+  .portfolio-subtitle {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    line-height: 1.6;
+  }
+
+  /* Botón hamburguesa */
+
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 44px;
+    height: 44px;
+    margin: 0 auto;
+
+    background: transparent;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+
+    color: #171717;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .menu-toggle:hover {
+    background: #f3f4f6;
+  }
+
+  .menu-toggle:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 3px;
+  }
+
+  /* Menú cerrado */
+
+  .portfolio-nav {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 0;
+    margin-top: 16px;
+    padding: 12px 0;
+
+    border-top: 1px solid #eeeeee;
+  }
+
+  /* Menú abierto */
+
+  .portfolio-nav.menu-open {
+    display: flex;
+  }
+
+  .portfolio-nav a {
+    display: block;
+    width: 100%;
+    padding: 14px 12px;
+
+    text-align: center;
+    text-decoration: none;
+    color: #171717;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+  }
+
+  .portfolio-nav a:hover {
+    background: #f5f5f5;
+  }
+}
+
+/* =========================================
+   AJUSTES PARA MÓVILES PEQUEÑOS
+   ========================================= */
+
+@media (max-width: 480px) {
+
+  .portfolio-header {
+    padding: 20px 16px;
+  }
+
+  .portfolio-name {
+    font-size: clamp(1.65rem, 8vw, 2.2rem);
+  }
+
+  .portfolio-subtitle {
+    font-size: 9px;
+    letter-spacing: 0.08em;
+  }
+}
+
+/* Cabecera compacta en móviles y tablets */
+@media (max-width: 900px) {
+
+  .portfolio-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 20px 24px;
+    text-align: left;
+  }
+
+  .portfolio-brand {
+    flex: 1 1 0;
+    min-width: 0;
+    margin-bottom: 0;
+  }
+
+  .portfolio-name {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+  }
+
+  .portfolio-subtitle {
+    margin-top: 8px;
+    font-size: 9px;
+    line-height: 1.5;
+    letter-spacing: 0.08em;
+  }
+
+  .menu-toggle {
+    flex-shrink: 0;
+    margin: 0;
+  }
+
+  .portfolio-nav {
+    flex-basis: 100%;
+    margin-top: 8px;
+  }
+}
+
+/* Ajuste adicional para móviles */
+@media (max-width: 480px) {
+
+  .portfolio-header {
+    padding: 18px 16px;
+  }
+
+  .portfolio-name {
+    font-size: clamp(1.4rem, 6vw, 1.9rem);
+  }
+}

@@ -137,3 +137,100 @@
     padding: 22px;
   }
 }
+
+/* Formación académica */
+
+.education-section {
+  margin-top: 65px;
+  padding-top: 35px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.education-label {
+  display: inline-block;
+  color: #078aa3;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+.education-section h2 {
+  font-size: 24px;
+  margin: 12px 0 24px;
+}
+
+.education-card {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 28px;
+}
+
+.education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.education-icon {
+  font-size: 30px;
+}
+
+.education-status {
+  background: #e8f6f8;
+  color: #087d93;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 7px 12px;
+  border-radius: 20px;
+}
+
+.education-card h3 {
+  font-size: 20px;
+  margin: 0 0 12px;
+}
+
+.education-university {
+  font-size: 15px;
+  color: #374151;
+  margin: 0 0 8px;
+}
+
+.education-date {
+  font-size: 13px;
+  color: #078aa3;
+  font-weight: 600;
+  margin: 0 0 22px;
+}
+
+.education-description {
+  max-width: 750px;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #6b7280;
+  margin: 0;
+}
+
+@media (max-width: 650px) {
+  .education-section {
+    margin-top: 45px;
+  }
+
+  .education-card {
+    padding: 22px;
+  }
+
+  .education-card h3 {
+    font-size: 18px;
+  }
+}
+
+.education-card-secondary {
+  margin-top: 20px;
+}
+
+.education-status-completed {
+  background: #e8f5ee;
+  color: #28754b;
+}

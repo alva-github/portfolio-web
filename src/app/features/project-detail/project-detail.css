@@ -527,10 +527,13 @@
    REDISEÑO VISUAL - ESP32 POWER MONITOR
    ========================================== */
 
+
 .project-detail {
   color: var(--color-texto);
   padding-top: 35px;
+  padding-bottom: 40px;
 }
+
 
 .back-link,
 .section-label {
