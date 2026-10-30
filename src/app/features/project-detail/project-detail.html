@@ -1,56 +1,41 @@
 <main class="project-detail">
-
   <!-- Navegación -->
-  <a routerLink="/" fragment="proyectos" class="back-link">
-    ← Volver a proyectos
-  </a>
+  <a routerLink="/" fragment="proyectos" class="back-link"> ← Volver a proyectos </a>
 
   <!-- Presentación -->
   <header class="project-header">
-
-    <span class="section-label">
-      PROYECTO IoT · EN DESARROLLO
-    </span>
+    <span class="section-label"> PROYECTO IoT · EN DESARROLLO </span>
 
     <h1>ESP32 Power Monitor</h1>
 
     <p class="project-intro">
-      Sistema de monitorización del suministro eléctrico
-      basado en ESP32-S3, capaz de detectar cortes de luz,
-      registrar eventos y enviar notificaciones automáticas
-      mediante Telegram.
+      Sistema de monitorización del suministro eléctrico basado en ESP32-S3, capaz de detectar
+      cortes de luz, registrar eventos y enviar notificaciones automáticas mediante Telegram.
     </p>
-
   </header>
 
   <!-- Descripción -->
   <section class="project-section">
-
     <h2>Descripción del proyecto</h2>
 
     <p>
-      ESP32 Power Monitor es un sistema IoT diseñado para
-      supervisar la disponibilidad del suministro eléctrico
-      de una instalación.
+      ESP32 Power Monitor es un sistema IoT diseñado para supervisar la disponibilidad del
+      suministro eléctrico de una instalación.
     </p>
 
     <p>
-      Utiliza un ESP32-S3 conectado a un módulo RTC y una
-      memoria EEPROM para registrar los eventos de corte
-      y recuperación, conservando su fecha y hora.
+      Utiliza un ESP32-S3 conectado a un módulo RTC y una memoria EEPROM para registrar los eventos
+      de corte y recuperación, conservando su fecha y hora.
     </p>
 
     <p>
-      Cuando se restablece el suministro y existe conexión
-      a Internet, el dispositivo envía una notificación
-      mediante Telegram con la duración de la interrupción.
+      Cuando se restablece el suministro y existe conexión a Internet, el dispositivo envía una
+      notificación mediante Telegram con la duración de la interrupción.
     </p>
-
   </section>
 
   <!-- Funcionalidades -->
   <section class="project-section">
-
     <h2>Funcionalidades implementadas</h2>
 
     <ul>
@@ -62,12 +47,10 @@
       <li>Notificaciones automáticas mediante Telegram.</li>
       <li>Cálculo de la duración de cada corte eléctrico.</li>
     </ul>
-
   </section>
 
   <!-- Hardware -->
   <section class="project-section">
-
     <h2>Hardware utilizado</h2>
 
     <ul>
@@ -77,280 +60,246 @@
       <li>PowerBoost 1000 Charger y batería LiPo.</li>
       <li>Resistencias para el divisor de tensión.</li>
     </ul>
-
   </section>
 
+  <!-- Arquitectura del sistema -->
 
-<!-- Arquitectura del sistema -->
+  <section class="project-section">
+    <h2>Galería del proyecto</h2>
 
-<section class="project-section">
-  <h2>Galería del proyecto</h2>
+    <p>
+      Prototipo funcional del ESP32 Power Monitor, con el ESP32-S3, el módulo RTC/EEPROM, el
+      circuito de detección y la alimentación de respaldo mediante PowerBoost y batería LiPo.
+    </p>
 
-  <p>
-    Prototipo funcional del ESP32 Power Monitor,
-    con el ESP32-S3, el módulo RTC/EEPROM,
-    el circuito de detección y la alimentación
-    de respaldo mediante PowerBoost y batería LiPo.
-  </p>
+    <figure class="project-photo">
+      <img
+        src="/images/esp32-power-monitor/montaje-completo.png"
+        alt="Montaje real del ESP32 Power Monitor con ESP32-S3, RTC, PowerBoost y batería LiPo"
+        loading="lazy"
+      />
 
-  <figure class="project-photo">
-    <img
-      src="/images/esp32-power-monitor/montaje-completo.png"
-      alt="Montaje real del ESP32 Power Monitor con ESP32-S3, RTC, PowerBoost y batería LiPo"
-      loading="lazy"
-    />
+      <figcaption>Montaje del prototipo durante las pruebas de funcionamiento.</figcaption>
+    </figure>
+  </section>
 
-    <figcaption>
-      Montaje del prototipo durante las pruebas de funcionamiento.
-    </figcaption>
-  </figure>
-</section>
+  <section class="project-section">
+    <h2>Arquitectura del sistema</h2>
 
-<section class="project-section">
+    <p>
+      El ESP32-S3 actúa como controlador principal, coordinando la detección eléctrica, el registro
+      de eventos y las comunicaciones.
+    </p>
 
-  <h2>Arquitectura del sistema</h2>
+    <div class="architecture">
+      <div class="architecture-block">
+        <strong>Detección eléctrica</strong>
+        <span>Divisor de tensión → GPIO 6</span>
+      </div>
 
-  <p>
-    El ESP32-S3 actúa como controlador principal,
-    coordinando la detección eléctrica, el registro
-    de eventos y las comunicaciones.
-  </p>
+      <div class="architecture-arrow">↓</div>
 
-  <div class="architecture">
+      <div class="architecture-block main-controller">
+        <strong>ESP32-S3</strong>
+        <span>Procesamiento y control</span>
+      </div>
 
-    <div class="architecture-block">
-      <strong>Detección eléctrica</strong>
-      <span>Divisor de tensión → GPIO 6</span>
-    </div>
+      <div class="architecture-arrow">↕</div>
 
-    <div class="architecture-arrow">↓</div>
+      <div class="architecture-peripherals">
+        <div class="architecture-block">
+          <strong>RTC DS3231</strong>
+          <span>Fecha y hora · I²C</span>
+        </div>
 
-    <div class="architecture-block main-controller">
-      <strong>ESP32-S3</strong>
-      <span>Procesamiento y control</span>
-    </div>
+        <div class="architecture-block">
+          <strong>EEPROM AT24C32</strong>
+          <span>Registro de eventos · I²C</span>
+        </div>
+      </div>
 
-    <div class="architecture-arrow">↕</div>
-
-    <div class="architecture-peripherals">
+      <div class="architecture-arrow">↓</div>
 
       <div class="architecture-block">
-        <strong>RTC DS3231</strong>
-        <span>Fecha y hora · I²C</span>
+        <strong>Wi-Fi / Internet</strong>
+        <span>Comunicación HTTPS</span>
       </div>
+
+      <div class="architecture-arrow">↓</div>
 
       <div class="architecture-block">
-        <strong>EEPROM AT24C32</strong>
-        <span>Registro de eventos · I²C</span>
+        <strong>Telegram</strong>
+        <span>Notificaciones automáticas</span>
       </div>
 
-    </div>
-
-    <div class="architecture-arrow">↓</div>
-
-    <div class="architecture-block">
-      <strong>Wi-Fi / Internet</strong>
-      <span>Comunicación HTTPS</span>
-    </div>
-
-    <div class="architecture-arrow">↓</div>
-
-    <div class="architecture-block">
-      <strong>Telegram</strong>
-      <span>Notificaciones automáticas</span>
-    </div>
-
-    <div class="architecture-power">
-      Alimentación de respaldo:
-      PowerBoost 1000 Charger + batería LiPo
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- Conexiones del hardware -->
-<section class="project-section">
-
-  <h2>Conexiones del hardware</h2>
-
-  <p>
-    El sistema utiliza el bus I²C para comunicarse
-    con el reloj de tiempo real y la memoria EEPROM.
-    La detección del suministro eléctrico se realiza
-    mediante una entrada digital independiente.
-  </p>
-
-  <div class="table-wrapper">
-
-    <table class="hardware-table">
-
-      <thead>
-        <tr>
-          <th>Componente</th>
-          <th>Conexión</th>
-          <th>Función</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr>
-          <td>RTC DS3231</td>
-          <td>GPIO 4 / GPIO 5</td>
-          <td>Fecha y hora mediante I²C</td>
-        </tr>
-
-        <tr>
-          <td>EEPROM AT24C32</td>
-          <td>GPIO 4 / GPIO 5</td>
-          <td>Almacenamiento de eventos</td>
-        </tr>
-
-        <tr>
-          <td>Divisor de tensión</td>
-          <td>GPIO 6</td>
-          <td>Detección de alimentación</td>
-        </tr>
-
-        <tr>
-          <td>PowerBoost 1000</td>
-          <td>5 V / GND</td>
-          <td>Alimentación de respaldo</td>
-        </tr>
-      </tbody>
-
-    </table>
-
-  </div>
-
-</section>
-
-
-<!-- Funcionamiento del software -->
-<section class="project-section">
-
-  <h2>Funcionamiento del software</h2>
-
-  <p>
-    El firmware está desarrollado en C++ utilizando
-    PlatformIO y el framework Arduino.
-    Su funcionamiento se basa en supervisar
-    continuamente el estado del suministro eléctrico.
-  </p>
-
-  <div class="software-flow">
-
-    <div class="flow-step">
-      <span class="step-number">01</span>
-      <div>
-        <h3>Inicialización</h3>
-        <p>
-          Configuración de GPIO, RTC, EEPROM
-          y comunicaciones.
-        </p>
+      <div class="architecture-power">
+        Alimentación de respaldo: PowerBoost 1000 Charger + batería LiPo
       </div>
     </div>
+  </section>
 
-    <div class="flow-step">
-      <span class="step-number">02</span>
-      <div>
-        <h3>Supervisión</h3>
-        <p>
-          Lectura del GPIO 6 para detectar
-          cambios en el suministro eléctrico.
-        </p>
-      </div>
+  <!-- Conexiones del hardware -->
+  <section class="project-section">
+    <h2>Conexiones del hardware</h2>
+
+    <p>
+      El sistema utiliza el bus I²C para comunicarse con el reloj de tiempo real y la memoria
+      EEPROM. La detección del suministro eléctrico se realiza mediante una entrada digital
+      independiente.
+    </p>
+
+    <div class="table-wrapper">
+      <table class="hardware-table">
+        <thead>
+          <tr>
+            <th>Componente</th>
+            <th>Conexión</th>
+            <th>Función</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>RTC DS3231</td>
+            <td>GPIO 4 / GPIO 5</td>
+            <td>Fecha y hora mediante I²C</td>
+          </tr>
+
+          <tr>
+            <td>EEPROM AT24C32</td>
+            <td>GPIO 4 / GPIO 5</td>
+            <td>Almacenamiento de eventos</td>
+          </tr>
+
+          <tr>
+            <td>Divisor de tensión</td>
+            <td>GPIO 6</td>
+            <td>Detección de alimentación</td>
+          </tr>
+
+          <tr>
+            <td>PowerBoost 1000</td>
+            <td>5 V / GND</td>
+            <td>Alimentación de respaldo</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+  </section>
 
-    <div class="flow-step">
-      <span class="step-number">03</span>
-      <div>
-        <h3>Registro del corte</h3>
-        <p>
-          Al detectar una interrupción, se obtiene
-          la fecha y hora del RTC y se registra
-          el evento en EEPROM.
-        </p>
-      </div>
-    </div>
+  <!-- Funcionamiento del software -->
+  <section class="project-section">
+    <h2>Funcionamiento del software</h2>
 
-    <div class="flow-step">
-      <span class="step-number">04</span>
-      <div>
-        <h3>Recuperación del suministro</h3>
-        <p>
-          Se registra el restablecimiento y se
-          calcula la duración del corte eléctrico.
-        </p>
-      </div>
-    </div>
+    <p>
+      El firmware está desarrollado en C++ utilizando PlatformIO y el framework Arduino. Su
+      funcionamiento se basa en supervisar continuamente el estado del suministro eléctrico.
+    </p>
 
-    <div class="flow-step">
-      <span class="step-number">05</span>
-      <div>
-        <h3>Notificación</h3>
-        <p>
-          El sistema comprueba la conexión Wi-Fi
-          e Internet y envía un informe mediante
-          Telegram. Si falla, realiza nuevos intentos.
-        </p>
-      </div>
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- Resultado real del proyecto -->
-<section class="project-section">
-
-  <h2>Resultados de las pruebas</h2>
-
-  <p>
-    El sistema ha sido probado detectando cortes
-    eléctricos reales, registrando los eventos
-    y enviando informes automáticos a Telegram
-    tras recuperar el suministro.
-  </p>
-
-  <div class="telegram-example">
-
-    <div class="telegram-header">
-      <span class="telegram-icon">✈</span>
-
-      <div>
-        <strong>ESP32 Power Monitor</strong>
-        <span>Ejemplo real de notificación</span>
-      </div>
-    </div>
-
-    <div class="telegram-message">
-
-      <strong>ESP32 POWER MONITOR</strong>
-
-      <p>CORTE ELÉCTRICO DETECTADO</p>
-
-      <div class="telegram-data">
-        Inicio: 08/10/2026 17:30:15<br>
-        Fin: 08/10/2026 17:35:42<br>
-
-        Duración: 5 minutos y 27 segundos<br>
-
-        Evento de corte: 75<br>
-        Evento de recuperación: 76
+    <div class="software-flow">
+      <div class="flow-step">
+        <span class="step-number">01</span>
+        <div>
+          <h3>Inicialización</h3>
+          <p>Configuración de GPIO, RTC, EEPROM y comunicaciones.</p>
+        </div>
       </div>
 
-      <p class="telegram-success">
-        ✅ Suministro eléctrico restablecido
-      </p>
+      <div class="flow-step">
+        <span class="step-number">02</span>
+        <div>
+          <h3>Supervisión</h3>
+          <p>Lectura del GPIO 6 para detectar cambios en el suministro eléctrico.</p>
+        </div>
+      </div>
 
+      <div class="flow-step">
+        <span class="step-number">03</span>
+        <div>
+          <h3>Registro del corte</h3>
+          <p>
+            Al detectar una interrupción, se obtiene la fecha y hora del RTC y se registra el evento
+            en EEPROM.
+          </p>
+        </div>
+      </div>
+
+      <div class="flow-step">
+        <span class="step-number">04</span>
+        <div>
+          <h3>Recuperación del suministro</h3>
+          <p>Se registra el restablecimiento y se calcula la duración del corte eléctrico.</p>
+        </div>
+      </div>
+
+      <div class="flow-step">
+        <span class="step-number">05</span>
+        <div>
+          <h3>Notificación</h3>
+          <p>
+            El sistema comprueba la conexión Wi-Fi e Internet y envía un informe mediante Telegram.
+            Si falla, realiza nuevos intentos.
+          </p>
+        </div>
+      </div>
     </div>
+  </section>
 
-  </div>
+  <!-- Resultado real del proyecto -->
+  <section class="project-section">
+    <h2>Resultados de las pruebas</h2>
 
-</section>
+    <p>
+      El sistema ha sido probado detectando cortes eléctricos reales, registrando los eventos y
+      enviando informes automáticos a Telegram tras recuperar el suministro.
+    </p>
 
+    <div class="telegram-example">
+      <div class="telegram-header">
+        <span class="telegram-icon">✈</span>
 
+        <div>
+          <strong>ESP32 Power Monitor</strong>
+          <span>Ejemplo real de notificación</span>
+        </div>
+      </div>
+
+      <div class="telegram-message">
+        <strong>ESP32 POWER MONITOR</strong>
+
+        <p>CORTE ELÉCTRICO DETECTADO</p>
+
+        <div class="telegram-data">
+          Inicio: 08/10/2026 17:30:15<br />
+          Fin: 08/10/2026 17:35:42<br />
+
+          Duración: 5 minutos y 27 segundos<br />
+
+          Evento de corte: 75<br />
+          Evento de recuperación: 76
+        </div>
+
+        <p class="telegram-success">✅ Suministro eléctrico restablecido</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Repositorio GitHub -->
+  <section class="project-section">
+    <h2>Código fuente</h2>
+
+    <p>
+      El código fuente de ESP32 Power Monitor está disponible en GitHub, junto con la documentación
+      técnica, las conexiones del hardware y las pruebas realizadas.
+    </p>
+
+    <a
+      href="https://github.com/alva-github/ESP32-Power-Monitor"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="project-link"
+    >
+      Ver proyecto en GitHub ↗
+    </a>
+  </section>
 </main>
