@@ -14,12 +14,37 @@ interface Project {
   selector: 'app-projects',
   imports: [RouterLink],
   templateUrl: './projects.html',
-  styleUrl: './projects.css'
+  styleUrl: './projects.css',
 })
 export class Projects {
-
   // Listado de proyectos del portfolio
   projects: Project[] = [
+    {
+      id: 'techrepair-pro',
+
+      title: 'TechRepair Pro',
+
+      description:
+        'Aplicación web full stack para la gestión de reparaciones ' +
+        'de dispositivos electrónicos. Incluye operaciones CRUD, ' +
+        'dashboard, integración con iFixit y comunicación MQTT ' +
+        'entre microservicios.',
+
+      status: 'Finalizado',
+
+      technologies: [
+        'Angular',
+        'TypeScript',
+        'Java 21',
+        'Spring Boot',
+        'PostgreSQL',
+        'Spring Data JPA',
+        'REST API',
+        'MQTT',
+        'Mosquitto',
+        'iFixit API',
+      ],
+    },
     {
       id: 'esp32-power-monitor',
 
@@ -40,9 +65,8 @@ export class Projects {
         'EEPROM AT24C32',
         'I²C',
         'Wi-Fi',
-        'Telegram API'
-      ]
-    }
+        'Telegram API',
+      ],
+    },
   ];
-
 }

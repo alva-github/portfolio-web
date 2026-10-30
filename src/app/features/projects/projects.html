@@ -1,70 +1,52 @@
 <section class="projects" id="proyectos">
+  <div class="projects-container">
+    <span class="section-label"> TRABAJOS DESTACADOS </span>
 
-    <div class="projects-container">
+    <h2>Proyectos</h2>
 
-        <span class="section-label">
-            TRABAJOS DESTACADOS
-        </span>
+    <p class="section-description">
+      Una selección de proyectos donde aplico conocimientos de desarrollo de software, electrónica y
+      sistemas conectados.
+    </p>
 
-        <h2>Proyectos</h2>
+    <div class="projects-grid">
+      @for (project of projects; track project.id) {
+        <article class="project-card">
+          <!-- Cabecera visual -->
+          <div class="project-image">
+            <span>
+              {{ project.id === 'techrepair-pro' ? '🛠️' : '⚡' }}
+              {{ project.title }}
+            </span>
+          </div>
 
-        <p class="section-description">
-            Una selección de proyectos donde aplico
-            conocimientos de desarrollo de software,
-            electrónica y sistemas conectados.
-        </p>
+          <!-- Información -->
+          <div class="project-content">
+            <span class="project-status">
+              {{ project.status }}
+            </span>
 
-        <div class="projects-grid">
+            <h3>{{ project.title }}</h3>
 
-            @for (project of projects; track project.id) {
+            <p>{{ project.description }}</p>
 
-            <article class="project-card">
+            <!-- Tecnologías utilizadas -->
+            <div class="project-technologies">
+              @for (technology of project.technologies; track technology) {
+                <span class="technology">
+                  {{ technology }}
+                </span>
+              }
+            </div>
 
-                <!-- Cabecera visual -->
-                <div class="project-image">
-                    <span>⚡ ESP32 POWER MONITOR</span>
-                </div>
-
-                <!-- Información -->
-                <div class="project-content">
-
-                    <span class="project-status">
-                        {{ project.status }}
-                    </span>
-
-                    <h3>{{ project.title }}</h3>
-
-                    <p>{{ project.description }}</p>
-
-                    <!-- Tecnologías utilizadas -->
-                    <div class="project-technologies">
-
-                        @for (technology of project.technologies;
-                        track technology) {
-
-                        <span class="technology">
-                            {{ technology }}
-                        </span>
-
-                        }
-
-                    </div>
-
-                    <!-- Enlace a la página de detalles -->
-                    <a [routerLink]="['/proyectos', project.id]" class="project-link">
-                        Ver detalles del proyecto
-                        <span aria-hidden="true">→</span>
-                    </a>
-
-
-                </div>
-
-            </article>
-
-            }
-
-        </div>
-
+            <!-- Enlace a la página de detalles -->
+            <a [routerLink]="['/proyectos', project.id]" class="project-link">
+              Ver detalles del proyecto
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+      }
     </div>
-
+  </div>
 </section>

@@ -1,0 +1,785 @@
+/* Contenedor principal */
+.project-detail {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 70px 30px 100px;
+}
+
+/* Enlace para regresar */
+.back-link {
+  display: inline-block;
+  margin-bottom: 45px;
+  color: #38bdf8;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* Cabecera del proyecto */
+.project-header {
+  margin-bottom: 60px;
+}
+
+.section-label {
+  color: #38bdf8;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.project-header h1 {
+  color: #f8fafc;
+  font-size: clamp(36px, 5vw, 52px);
+  margin: 20px 0;
+  line-height: 1.2;
+}
+
+.project-intro {
+  color: #94a3b8;
+  font-size: 19px;
+  line-height: 1.8;
+  max-width: 800px;
+}
+
+/* Apartados técnicos */
+.project-section {
+  margin-bottom: 35px;
+  padding: 35px;
+  background-color: #111d30;
+  border: 1px solid #334155;
+  border-radius: 12px;
+}
+
+.project-section h2 {
+  color: #f8fafc;
+  font-size: 25px;
+  margin: 0 0 25px;
+}
+
+/* Párrafos */
+.project-section p {
+  color: #94a3b8;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+.project-section p:last-child {
+  margin-bottom: 0;
+}
+
+/* Listas */
+.project-section ul {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.project-section li {
+  color: #94a3b8;
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.project-section li::marker {
+  color: #38bdf8;
+}
+
+/* Adaptación a móviles */
+@media (max-width: 650px) {
+  .project-detail {
+    padding: 40px 20px 70px;
+  }
+
+  .project-header {
+    margin-bottom: 40px;
+  }
+
+  .project-intro {
+    font-size: 17px;
+  }
+
+  .project-section {
+    padding: 22px;
+  }
+
+  .project-section h2 {
+    font-size: 22px;
+  }
+}
+
+/* ==================================
+   ARQUITECTURA DEL SISTEMA
+   ================================== */
+
+.architecture {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-top: 35px;
+}
+
+/* Bloques del diagrama */
+.architecture-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+  width: 100%;
+  max-width: 320px;
+  padding: 20px;
+
+  background-color: #0b1220;
+  border: 1px solid #334155;
+  border-radius: 10px;
+
+  text-align: center;
+}
+
+.architecture-block strong {
+  color: #f8fafc;
+  font-size: 16px;
+}
+
+.architecture-block span {
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+/* Controlador principal */
+.main-controller {
+  background-color: #164e63;
+  border-color: #38bdf8;
+  box-shadow: 0 0 25px #38bdf820;
+}
+
+.main-controller strong {
+  color: #38bdf8;
+  font-size: 20px;
+}
+
+/* Flechas */
+.architecture-arrow {
+  color: #38bdf8;
+  font-size: 25px;
+  line-height: 1;
+}
+
+/* RTC y EEPROM en paralelo */
+.architecture-peripherals {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 660px;
+}
+
+.architecture-peripherals .architecture-block {
+  max-width: none;
+}
+
+/* Alimentación de respaldo */
+.architecture-power {
+  width: 100%;
+  max-width: 660px;
+  margin-top: 20px;
+  padding: 18px;
+
+  background-color: #142b26;
+  border: 1px solid #3f8f74;
+  border-radius: 10px;
+
+  color: #86efac;
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Adaptación a móviles */
+@media (max-width: 600px) {
+  .architecture-peripherals {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+  }
+
+  .architecture-block {
+    padding: 16px;
+  }
+
+  .architecture-power {
+    font-size: 13px;
+  }
+}
+
+/* ==================================
+   TABLA DE CONEXIONES DEL HARDWARE
+   ================================== */
+
+/* Permite desplazamiento horizontal en móviles */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 25px;
+  border: 1px solid #334155;
+  border-radius: 10px;
+}
+
+/* Tabla principal */
+.hardware-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 550px;
+  text-align: left;
+}
+
+/* Encabezados */
+.hardware-table thead {
+  background-color: #164e63;
+}
+
+.hardware-table th {
+  padding: 16px 20px;
+  color: #f8fafc;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Celdas */
+.hardware-table td {
+  padding: 16px 20px;
+  color: #94a3b8;
+  font-size: 14px;
+  line-height: 1.6;
+  border-top: 1px solid #334155;
+}
+
+/* Alternar colores entre filas */
+.hardware-table tbody tr:nth-child(even) {
+  background-color: #0b1220;
+}
+
+/* Resaltar fila al pasar el ratón */
+.hardware-table tbody tr:hover {
+  background-color: #1e293b;
+}
+
+/* Destacar la primera columna */
+.hardware-table td:first-child {
+  color: #f8fafc;
+  font-weight: 600;
+}
+
+/* ==================================
+   FUNCIONAMIENTO DEL SOFTWARE
+   ================================== */
+
+.software-flow {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 35px;
+}
+
+/* Línea vertical que conecta los pasos */
+.software-flow::before {
+  content: '';
+  position: absolute;
+  top: 25px;
+  bottom: 25px;
+  left: 24px;
+  width: 2px;
+  background-color: #334155;
+}
+
+/* Cada paso */
+.flow-step {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+}
+
+/* Número circular */
+.step-number {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+
+  background-color: #164e63;
+  border: 2px solid #38bdf8;
+  border-radius: 50%;
+
+  color: #38bdf8;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* Tarjeta con la descripción */
+.flow-step > div {
+  flex: 1;
+  min-width: 0;
+  padding: 20px 25px;
+
+  background-color: #0b1220;
+  border: 1px solid #334155;
+  border-radius: 10px;
+
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* Efecto al pasar el ratón */
+.flow-step:hover > div {
+  border-color: #38bdf8;
+  transform: translateX(5px);
+}
+
+/* Título del paso */
+.flow-step h3 {
+  margin: 0 0 10px;
+  color: #f8fafc;
+  font-size: 18px;
+}
+
+/* Descripción */
+.flow-step p {
+  margin: 0;
+  color: #94a3b8;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* Adaptación a móviles */
+@media (max-width: 600px) {
+  .software-flow {
+    gap: 20px;
+  }
+
+  .software-flow::before {
+    left: 19px;
+  }
+
+  .flow-step {
+    gap: 15px;
+  }
+
+  .step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 12px;
+  }
+
+  .flow-step > div {
+    padding: 15px;
+  }
+
+  .flow-step h3 {
+    font-size: 16px;
+  }
+
+  .flow-step p {
+    font-size: 14px;
+  }
+}
+
+/* ==================================
+   RESULTADOS - NOTIFICACIÓN TELEGRAM
+   ================================== */
+
+/* Contenedor general */
+.telegram-example {
+  max-width: 560px;
+  margin: 30px auto 0;
+  padding: 20px;
+
+  background-color: #17212b;
+  border: 1px solid #334155;
+  border-radius: 14px;
+}
+
+/* Cabecera */
+.telegram-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* Icono */
+.telegram-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+
+  background-color: #229ed9;
+  border-radius: 50%;
+
+  color: white;
+  font-size: 22px;
+}
+
+/* Nombre del sistema */
+.telegram-header > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.telegram-header strong {
+  color: #f8fafc;
+  font-size: 15px;
+}
+
+.telegram-header span:not(.telegram-icon) {
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+/* Burbuja del mensaje */
+.telegram-message {
+  padding: 22px;
+
+  background-color: #202f3c;
+  border-radius: 5px 14px 14px 14px;
+
+  color: #f8fafc;
+  overflow-wrap: anywhere;
+}
+
+/* Título */
+.telegram-message > strong {
+  display: block;
+  margin-bottom: 18px;
+  font-size: 16px;
+}
+
+/* Texto */
+.telegram-message p {
+  color: #f8fafc;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* Fechas, duración y eventos */
+.telegram-data {
+  margin: 18px 0;
+  padding: 15px;
+
+  background-color: #17212b;
+  border-radius: 8px;
+
+  color: #e2e8f0;
+  font-family: monospace;
+  font-size: 13px;
+  line-height: 1.8;
+
+  white-space: pre-line;
+}
+
+/* Confirmación */
+.telegram-message .telegram-success {
+  margin: 18px 0 0;
+  color: #86efac;
+  font-weight: 600;
+}
+
+/* Adaptación a móviles */
+@media (max-width: 600px) {
+  .telegram-example {
+    padding: 12px;
+  }
+
+  .telegram-message {
+    padding: 15px;
+  }
+
+  .telegram-data {
+    padding: 12px;
+    font-size: 12px;
+  }
+}
+
+/* ==========================================
+   REDISEÑO VISUAL - ESP32 POWER MONITOR
+   ========================================== */
+
+.project-detail {
+  color: var(--color-texto);
+  padding-top: 35px;
+  padding-bottom: 40px;
+}
+
+.back-link,
+.section-label {
+  color: #078aa3;
+}
+
+.project-header h1 {
+  color: var(--color-texto);
+}
+
+.project-intro {
+  color: var(--color-secundario);
+}
+
+/* Secciones técnicas */
+
+.project-section {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+}
+
+.project-section h2 {
+  color: var(--color-texto);
+}
+
+.project-section p,
+.project-section li {
+  color: #4b5563;
+}
+
+.project-section li::marker {
+  color: var(--color-naranja);
+}
+
+/* Diagrama de arquitectura */
+
+.architecture-block {
+  background: var(--color-amarillo-suave);
+  border-color: #f0e3aa;
+}
+
+.architecture-block strong {
+  color: var(--color-texto);
+}
+
+.architecture-block span {
+  color: #4b5563;
+}
+
+.main-controller {
+  background: var(--color-azul-suave);
+  border-color: var(--color-azul);
+  box-shadow: none;
+}
+
+.main-controller strong {
+  color: #078aa3;
+}
+
+.architecture-arrow {
+  color: var(--color-naranja);
+}
+
+.architecture-power {
+  background: var(--color-verde-suave);
+  border-color: var(--color-verde);
+  color: #377d28;
+}
+
+/* ==========================================
+   TABLA DE CONEXIONES - NUEVA PALETA
+   ========================================== */
+
+.table-wrapper {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+}
+
+.hardware-table {
+  background: #ffffff;
+}
+
+.hardware-table thead {
+  background: var(--color-azul-suave);
+}
+
+.hardware-table th {
+  color: #171717;
+  font-weight: 700;
+}
+
+.hardware-table td {
+  color: #4b5563;
+  border-top: 1px solid #e5e7eb;
+}
+
+.hardware-table td:first-child {
+  color: #171717;
+  font-weight: 600;
+}
+
+.hardware-table tbody tr:nth-child(even) {
+  background: #f9fafb;
+}
+
+.hardware-table tbody tr:hover {
+  background: var(--color-amarillo-suave);
+}
+
+/* ==========================================
+   FLUJO DEL SOFTWARE - NUEVA PALETA
+   ========================================== */
+
+.software-flow::before {
+  background: var(--color-azul);
+}
+
+.step-number {
+  background: var(--color-amarillo-suave);
+  border: 2px solid var(--color-naranja);
+  color: #171717;
+}
+
+.flow-step > div {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+}
+
+.flow-step:hover > div {
+  border-color: var(--color-azul);
+}
+
+.flow-step h3 {
+  color: #171717;
+}
+
+.flow-step p {
+  color: #4b5563;
+}
+
+/* ==========================================
+   TELEGRAM - NUEVA PALETA
+   ========================================== */
+
+/* Contenedor de la notificación */
+.telegram-example {
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+}
+
+/* Icono */
+.telegram-icon {
+  background: var(--color-azul);
+  color: #ffffff;
+}
+
+/* Cabecera */
+.telegram-header strong {
+  color: var(--color-texto);
+}
+
+.telegram-header span:not(.telegram-icon) {
+  color: var(--color-secundario);
+}
+
+/* Burbuja del mensaje */
+.telegram-message {
+  background: var(--color-azul-suave);
+  color: var(--color-texto);
+}
+
+/* Título del mensaje */
+.telegram-message > strong {
+  color: var(--color-texto);
+}
+
+/* Texto */
+.telegram-message p {
+  color: #374151;
+}
+
+/* Fechas, duración y eventos */
+.telegram-data {
+  background: #ffffff;
+  border: 1px solid #d8edf2;
+  color: #374151;
+}
+
+/* Confirmación de recuperación */
+.telegram-message .telegram-success {
+  color: #377d28;
+}
+
+/* Galería de fotografías */
+
+.project-photo {
+  margin: 25px 0 0;
+}
+
+.project-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+}
+
+.project-photo figcaption {
+  margin-top: 12px;
+  color: var(--color-secundario);
+  font-size: 13px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   GALERÍA DEL PROYECTO
+   ========================================== */
+
+.project-photo {
+  margin: 25px 0 0;
+  padding: 10px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+}
+
+.project-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 9px;
+  transition: transform 0.3s ease;
+}
+
+.project-photo img:hover {
+  transform: scale(1.015);
+}
+
+.project-photo figcaption {
+  margin: 14px 5px 5px;
+  color: var(--color-secundario);
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-photo img {
+    transition: none;
+  }
+
+  .project-photo img:hover {
+    transform: none;
+  }
+}

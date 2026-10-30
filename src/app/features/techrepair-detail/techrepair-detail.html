@@ -1,0 +1,132 @@
+<main class="project-detail">
+  <a routerLink="/proyectos" class="back-link"> ← Volver a proyectos </a>
+
+  <header class="project-header">
+    <span class="section-label"> PROYECTO FULL STACK · FINALIZADO </span>
+
+    <h1>TechRepair Pro</h1>
+
+    <p class="project-intro">
+      Aplicación web para la gestión de reparaciones de dispositivos electrónicos, desarrollada con
+      Angular, Spring Boot y PostgreSQL. Incluye dashboard, operaciones CRUD, integración con iFixit
+      y comunicación MQTT entre microservicios.
+    </p>
+  </header>
+
+  <!-- Descripción del proyecto -->
+  <section class="project-section">
+    <h2>Descripción del proyecto</h2>
+
+    <p>
+      TechRepair Pro es una aplicación full stack desarrollada para gestionar las reparaciones de
+      dispositivos electrónicos.
+    </p>
+
+    <p>
+      El proyecto utiliza una arquitectura basada en microservicios, separando la gestión de
+      reparaciones del procesamiento de notificaciones mediante MQTT.
+    </p>
+  </section>
+
+  <!-- Funcionalidades -->
+  <section class="project-section">
+    <h2>Funcionalidades implementadas</h2>
+
+    <ul>
+      <li>Registro de nuevas reparaciones.</li>
+      <li>Consulta, modificación y eliminación de reparaciones.</li>
+      <li>Actualización del estado de cada reparación.</li>
+      <li>Dashboard de seguimiento de reparaciones.</li>
+      <li>Persistencia de datos en PostgreSQL mediante JPA.</li>
+      <li>Consulta de guías técnicas mediante la API de iFixit.</li>
+      <li>Publicación de eventos mediante MQTT.</li>
+      <li>Recepción de eventos en el microservicio de notificaciones.</li>
+    </ul>
+  </section>
+
+  <!-- Tecnologías -->
+  <section class="project-section">
+    <h2>Tecnologías utilizadas</h2>
+
+    <div class="project-technologies">
+      @for (technology of technologies; track technology) {
+        <span class="technology">{{ technology }} - </span>
+      }
+    </div>
+  </section>
+
+  <section class="project-section">
+    <h2>Arquitectura del sistema</h2>
+
+    <p>
+      La aplicación utiliza dos microservicios Spring Boot que se comunican mediante eventos MQTT.
+    </p>
+
+    <div class="architecture">
+      <div class="architecture-block">
+        <strong>Angular</strong>
+        <span>Frontend · CRUD · Dashboard</span>
+      </div>
+
+      <div class="architecture-arrow">↕ REST / JSON</div>
+
+      <div class="architecture-block main-controller">
+        <strong>Spring Boot</strong>
+        <span>reparaciones-service · Java 21</span>
+      </div>
+
+      <div class="architecture-arrow">↕</div>
+
+      <div class="architecture-peripherals">
+        <div class="architecture-block">
+          <strong>PostgreSQL</strong>
+          <span>Persistencia mediante JPA</span>
+        </div>
+
+        <div class="architecture-block">
+          <strong>iFixit API</strong>
+          <span>Consulta de guías técnicas</span>
+        </div>
+      </div>
+
+      <div class="architecture-arrow">↓ MQTT</div>
+
+      <div class="architecture-block">
+        <strong>Mosquitto</strong>
+        <span>Broker de mensajes</span>
+      </div>
+
+      <div class="architecture-arrow">↓ MQTT</div>
+
+      <div class="architecture-block">
+        <strong>notificaciones-service</strong>
+        <span>Recepción de eventos</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Capturas reales de TechRepair Pro -->
+  <section class="project-section">
+    <h2>Capturas de la aplicación</h2>
+
+    <p>Interfaz Angular de TechRepair Pro, con panel de seguimiento y gestión de reparaciones.</p>
+
+    <figure class="project-photo">
+      <img
+        src="/images/techrepair-pro/dashboard.png"
+        alt="Dashboard de TechRepair Pro"
+        loading="lazy"
+      />
+      <figcaption>Dashboard con estadísticas de reparaciones.</figcaption>
+    </figure>
+
+    <figure class="project-photo">
+      <img
+        src="/images/techrepair-pro/reparaciones.png"
+        alt="Listado de reparaciones de TechRepair Pro"
+        loading="lazy"
+      />
+      <figcaption>Listado y gestión de reparaciones.</figcaption>
+    </figure>
+  </section>
+</main>
